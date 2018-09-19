@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AllPeopleService } from '../services/all-people.service';
+import { AllPeople } from '../iterfaces/all-people';
 
 @Component({
   selector: 'app-play',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlayComponent implements OnInit {
 
-  constructor() { }
+  results: AllPeople;
+  
+  constructor(private AllPeopleService: AllPeopleService) { }
 
   ngOnInit() {
+    getAllPeople(1);
+  }
+
+  getAllPeople = (page: number) => {
+    this.AllPeopleService.allPeople(page).subscribe( (response) => {
+      this.results = response;
+      console.log(this.results);
+    }, (error) => {
+      alert("Error: " + error.statusText);
+    })
   }
 
 }
