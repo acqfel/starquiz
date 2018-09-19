@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AllPeopleService } from '../services/all-people.service';
-import { AllPeople } from '../iterfaces/all-people';
+import { AllPeople } from '../interfaces/all-people';
 
 @Component({
   selector: 'app-play',
@@ -14,7 +14,7 @@ export class PlayComponent implements OnInit {
   constructor(private AllPeopleService: AllPeopleService) { }
 
   ngOnInit() {
-    getAllPeople(1);
+    this.getAllPeople(1);
   }
 
   getAllPeople = (page: number) => {

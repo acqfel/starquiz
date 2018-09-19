@@ -1,3 +1,20 @@
 <p>
   play works!
 </p>
+<div class="container" fxLayout="row">
+  <mat-grid-list cols="5" rowHeight="150px" *ngIf="results" fxFlex>
+    <mat-grid-tile *ngFor="let item of results.results" 
+                   fxLayout="column" >
+      <div fxFlex="40">
+        <img matListAvatar alt={{item.name}}>
+      </div>
+      <div fxFlex="60">
+        <h4>{{item.gender}}</h4>
+        <p fxLayoutAlign="start center"><mat-icon>visibility</mat-icon> views</p>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+  <div [hidden]="results" fxFlex="100%">
+    <mat-spinner></mat-spinner><h4>Loading . . . Please Wait</h4>
+  </div>
+</div>
