@@ -1,16 +1,21 @@
-<p>
-  play works!
-</p>
 <div class="container" fxLayout="row">
-  <mat-grid-list cols="5" rowHeight="150px" *ngIf="results" fxFlex>
+  <mat-grid-list cols="4" rowHeight="150px" *ngIf="results" fxFlex>
     <mat-grid-tile *ngFor="let item of results.results" 
                    fxLayout="column" >
-      <div fxFlex="40">
-        <img matListAvatar alt={{item.name}}>
+      <div fxLayout="row" fxLayoutAlign="center center">
+        <div fxFlex="100">
+          <img width=50 height=50 alt={{item.name}}>
+        </div>
       </div>
-      <div fxFlex="60">
-        <h4>{{item.gender}}</h4>
-        <p fxLayoutAlign="start center"><mat-icon>visibility</mat-icon> views</p>
+      <div fxLayout="row">
+        <div fxFlex="50">
+          <form>
+            <!--<input matInput name="name" placeholder="" [(ngModel)]="nameInput" (keyup.enter)="checkName(item.name)">-->
+          </form>
+        </div>
+        <div fxFlex="50">
+          <button mat-button color="primary" (click)="openDetails(item)">?</button>
+        </div>
       </div>
     </mat-grid-tile>
   </mat-grid-list>
