@@ -18,6 +18,7 @@ import { MatInputModule } from '@angular/material/input';
 
 import { AppComponent } from './app.component';
 import { AllPeopleService } from './services/all-people.service';
+import { ScoreService } from '.services/score.service';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 
 import { HomeComponent } from './home/home.component';
@@ -49,7 +50,7 @@ import { AnswerModalComponent } from './answer-modal/answer-modal.component';
     MatInputModule,
     AppRoutingModule
   ],
-  providers: [AllPeopleService],
+  providers: [AllPeopleService,ScoreService],
   entryComponents: [DetailsModalComponent,AnswerModalComponent],
   bootstrap: [AppComponent]
 })
