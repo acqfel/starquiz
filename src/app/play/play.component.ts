@@ -3,6 +3,7 @@ import { AllPeopleService } from '../services/all-people.service';
 import { AllPeople, Result } from '../interfaces/all-people';
 import { MatDialog, MatDialogRef } from '@angular/material';
 import { DetailsModalComponent } from '../details-modal/details-modal.component';
+import { AnswerModalComponent } from '../answer-modal/answer-modal.component';
 
 @Component({
   selector: 'app-play',
@@ -12,7 +13,6 @@ import { DetailsModalComponent } from '../details-modal/details-modal.component'
 export class PlayComponent implements OnInit {
 
   results: AllPeople;
-  nameInput: string;
   
   constructor(private AllPeopleService: AllPeopleService,
               public dialog: MatDialog) { }
@@ -51,9 +51,13 @@ export class PlayComponent implements OnInit {
                     });
   }
   
-  checkName(name: string) {
-    console.log(name);
-    console.log(this.nameInput);
+  openAnswer = (name: string) => {
+    let namePerson = name;
+    this.dialog.open(AnswerModalComponent, 
+                    {width: '550px', 
+                      height: '450px', 
+                      data: {namePerson: namePerson}
+                    });
   }
 
 }

@@ -23,13 +23,15 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
 import { HomeComponent } from './home/home.component';
 import { PlayComponent } from './play/play.component';
 import { DetailsModalComponent } from './details-modal/details-modal.component';
+import { AnswerModalComponent } from './answer-modal/answer-modal.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     PlayComponent,
-    DetailsModalComponent
+    DetailsModalComponent,
+    AnswerModalComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +50,7 @@ import { DetailsModalComponent } from './details-modal/details-modal.component';
     AppRoutingModule
   ],
   providers: [AllPeopleService],
-  entryComponents: [DetailsModalComponent],
+  entryComponents: [DetailsModalComponent,AnswerModalComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

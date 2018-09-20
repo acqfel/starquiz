@@ -2,10 +2,12 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 
 export interface DialogData {
-  videoId: string,
-  description: string,
-  title: string,
-  publishedAt: string;
+  species: string[],
+  height: string,
+  hair_color: string,
+  homeworld: string,
+  films: string[],
+  vehicles: string[]
 }
 
 @Component({
