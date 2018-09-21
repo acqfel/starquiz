@@ -19,6 +19,7 @@ import { MatInputModule } from '@angular/material/input';
 import { AppComponent } from './app.component';
 import { AllPeopleService } from './services/all-people.service';
 import { ScoreService } from './services/score.service';
+import { HeroImageService } from './services/hero-image.service';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 
 import { HomeComponent } from './home/home.component';
@@ -52,7 +53,7 @@ import { CardComponent } from './card/card.component';
     MatInputModule,
     AppRoutingModule
   ],
-  providers: [AllPeopleService,ScoreService],
+  providers: [AllPeopleService,ScoreService,HeroImageService],
   entryComponents: [DetailsModalComponent,AnswerModalComponent],
   bootstrap: [AppComponent]
 })

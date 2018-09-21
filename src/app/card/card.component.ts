@@ -3,6 +3,7 @@ import { MatDialog, MatDialogRef } from '@angular/material';
 import { DetailsModalComponent } from '../details-modal/details-modal.component';
 import { AnswerModalComponent } from '../answer-modal/answer-modal.component';
 import { Result } from '../interfaces/all-people';
+import { HeroImageService } from '../services/hero-image.service';
 
 @Component({
   selector: 'app-card',
@@ -14,10 +15,13 @@ export class CardComponent implements OnInit {
   @Input() item: Result;
   
   clickDetails: boolean = false;
+  photo: string;
 
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog,
+              private HeroImageService: HeroImageService) { }
 
   ngOnInit() {
+    this.getHeroImage();
   }
   
    // Modal
@@ -52,6 +56,14 @@ export class CardComponent implements OnInit {
                       data: {namePerson: namePerson,
                               clickDet: clickDet}
                     });
+  }
+  
+  getHeroImage = () => {
+    this.HeroImageService.heroImage(this.item.name).subscribe( (response) => {
+      this.photo = response.items[0].link;
+    }, (error) => {
+      alert("Error: " + error.statusText);
+    })
   }
 
 }

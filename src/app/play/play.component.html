@@ -1,5 +1,5 @@
 <div class="container" fxLayout="row">
-  <mat-grid-list cols="4" rowHeight="150px" *ngIf="results" fxFlex>
+  <mat-grid-list cols="4" rowHeight="250px" *ngIf="results" fxFlex>
     <mat-grid-tile *ngFor="let item of results.results" 
                    fxLayout="column" >
       <app-card [item]="item"></app-card>
