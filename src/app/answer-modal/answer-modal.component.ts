@@ -3,7 +3,8 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import { ScoreService } from '../services/score.service';
 
 export interface DialogData {
-  namePerson: string
+  namePerson: string,
+  clickDet: boolean
 }
 
 @Component({
@@ -17,9 +18,12 @@ export class AnswerModalComponent implements OnInit {
               private ScoreService: ScoreService) { }
 
   ngOnInit() {
+    this.checkAnswer();
   }
 
   checkAnswer() {
-    this.ScoreService.addScore();
+    console.log("clickDet: "+this.data.clickDet);
+    let point = this.data.clickDet ? 5 : 10; 
+    this.ScoreService.addScore(point);
   }
 }

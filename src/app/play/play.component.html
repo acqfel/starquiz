@@ -2,17 +2,7 @@
   <mat-grid-list cols="4" rowHeight="150px" *ngIf="results" fxFlex>
     <mat-grid-tile *ngFor="let item of results.results" 
                    fxLayout="column" >
-      <div>
-        <img width=50 height=50 alt={{item.name}}>
-      </div>
-      <div fxLayout="row">
-        <div fxFlex="50">
-          <button mat-button color="primary" (click)="openAnswer(item.name)">?</button>
-        </div>
-        <div fxFlex="50">
-          <button mat-button color="primary" (click)="openDetails(item)">?</button>
-        </div>
-      </div>
+      <app-card [item]="item"></app-card>
     </mat-grid-tile>
   </mat-grid-list>
   <div [hidden]="results" fxFlex="100%">

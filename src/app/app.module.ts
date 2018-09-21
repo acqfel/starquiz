@@ -18,13 +18,14 @@ import { MatInputModule } from '@angular/material/input';
 
 import { AppComponent } from './app.component';
 import { AllPeopleService } from './services/all-people.service';
-import { ScoreService } from '.services/score.service';
+import { ScoreService } from './services/score.service';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 
 import { HomeComponent } from './home/home.component';
 import { PlayComponent } from './play/play.component';
 import { DetailsModalComponent } from './details-modal/details-modal.component';
 import { AnswerModalComponent } from './answer-modal/answer-modal.component';
+import { CardComponent } from './card/card.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { AnswerModalComponent } from './answer-modal/answer-modal.component';
     HomeComponent,
     PlayComponent,
     DetailsModalComponent,
-    AnswerModalComponent
+    AnswerModalComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,

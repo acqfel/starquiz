@@ -9,8 +9,8 @@ export class ScoreService {
 
   constructor() { }
   
-  addScore() {
-    this.score += 10;
+  addScore(point: number) {
+    this.score += point;
     console.log("Score: "+this.score);
   }
 }
