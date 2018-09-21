@@ -1,4 +1,15 @@
+<button mat-button mat-icon-button mat-dialog-close>
+  <mat-icon>close</mat-icon>
+</button>
 <p>
-  answer-modal works!
+  Qual o nome do personagem ?
 </p>
 <!--<input matInput name="name" placeholder="" [(ngModel)]="nameInput" (keyup.enter)="checkName(item.name)">-->
+<!--<input #box-->
+<!--      (keyup.enter)="update(box.value)"-->
+<!--      (blur)="update(box.value)">-->
+
+    <p>{{value}}</p>
+    
+<input matInput name="name" placeholder="" [(ngModel)]="value" (keyup.enter)="update(value)">
+<button mat-button color="primary" (click)="update(value)" mat-dialog-close>Enviar</button>

@@ -14,16 +14,31 @@ export interface DialogData {
 })
 export class AnswerModalComponent implements OnInit {
 
+  value: string = '';
+
   constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData,
               private ScoreService: ScoreService) { }
 
-  ngOnInit() {
-    this.checkAnswer();
-  }
+  ngOnInit() {}
 
   checkAnswer() {
-    console.log("clickDet: "+this.data.clickDet);
-    let point = this.data.clickDet ? 5 : 10; 
-    this.ScoreService.addScore(point);
+    let person = this.data.namePerson.toLowerCase();
+    
+    console.log("Value: "+this.value);
+    console.log("Person: "+person);
+    
+    if (this.value == person) {
+      console.log("clickDet: "+this.data.clickDet);
+      let point = this.data.clickDet ? 5 : 10; 
+      this.ScoreService.addScore(point);
+    } else {
+      console.log("Incorrect");
+    }
+    
+  }
+  
+  update(value: string) { 
+    this.value = value.toLowerCase(); 
+    this.checkAnswer();
   }
 }
