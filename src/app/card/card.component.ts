@@ -60,7 +60,7 @@ export class CardComponent implements OnInit {
   
   getHeroImage = () => {
     this.HeroImageService.heroImage(this.item.name).subscribe( (response) => {
-      this.photo = response.items[0].link;
+      this.photo = response.data[0].images.fixed_height_still.url;
     }, (error) => {
       alert("Error: " + error.statusText);
     })

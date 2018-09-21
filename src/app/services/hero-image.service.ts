@@ -8,12 +8,29 @@ import { Observable } from 'rxjs';
 })
 export class HeroImageService {
 
-  baseUrl: string = 'https://www.googleapis.com/customsearch/v1?imgColorType=color&imgSize=medium&lr=lang_en&num=1&searchType=image&key=AIzaSyAzpNSjRQkhe--NBbJ7p_IoExqt6miczu0&cx=016148679609242770504:zpvzq5xbf2o&q=';
+  baseUrl: string = 'https://api.giphy.com/v1/gifs/search?api_key=Wq7jKPN0fRCHf3ea0gtqfa61tg6mxMw2&limit=1&offset=0&rating=G&lang=en&fmt=json&q=';
   search: Observable<HeroImage>;
   cachedValue: string;
 
   constructor(private http: HttpClient) { }
   
+  // Google Image
+  /*
+  heroImage : Function = (query: string) : Observable<HeroImage> => {
+    if (!this.search) {
+        this.search = this.http.get<HeroImage>(this.baseUrl + query);
+        this.cachedValue = query;
+    }
+    else if (this.cachedValue !== query) {
+        this.search = null;
+        this.heroImage(query);
+    }
+    
+    return this.search;
+  }
+  */
+  
+  // Giphy Image
   heroImage : Function = (query: string) : Observable<HeroImage> => {
     if (!this.search) {
         this.search = this.http.get<HeroImage>(this.baseUrl + query);

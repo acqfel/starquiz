@@ -27,6 +27,7 @@ import { PlayComponent } from './play/play.component';
 import { DetailsModalComponent } from './details-modal/details-modal.component';
 import { AnswerModalComponent } from './answer-modal/answer-modal.component';
 import { CardComponent } from './card/card.component';
+import { PointsComponent } from './points/points.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { CardComponent } from './card/card.component';
     PlayComponent,
     DetailsModalComponent,
     AnswerModalComponent,
-    CardComponent
+    CardComponent,
+    PointsComponent
   ],
   imports: [
     BrowserModule,

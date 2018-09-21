@@ -17,6 +17,7 @@ export class AnswerModalComponent implements OnInit {
   value: string = '';
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData,
+              public dialogRef: MatDialogRef<AnswerModalComponent>,
               private ScoreService: ScoreService) { }
 
   ngOnInit() {}
@@ -29,7 +30,7 @@ export class AnswerModalComponent implements OnInit {
     
     if (this.value == person) {
       console.log("clickDet: "+this.data.clickDet);
-      let point = this.data.clickDet ? 5 : 10; 
+      let point = this.data.clickDet ? Number(5) : Number(10); 
       this.ScoreService.addScore(point);
     } else {
       console.log("Incorrect");
@@ -38,7 +39,8 @@ export class AnswerModalComponent implements OnInit {
   }
   
   update(value: string) { 
-    this.value = value.toLowerCase(); 
+    this.value = value.toLowerCase();
+    this.dialogRef.close();
     this.checkAnswer();
   }
 }
