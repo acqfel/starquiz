@@ -211,7 +211,7 @@
         looping: Looping;
         original_mp4: OriginalMp4;
         preview_gif: PreviewGif;
-        480w_still: __480wStill;
+        _480w_still: __480wStill;
     }
 
     export interface Datum {

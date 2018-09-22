@@ -19,7 +19,7 @@ export class PointsComponent implements OnInit {
   getTotalPoints() {
     //this.totalPoints = Number(this.ScoreService.getScore());
     this.totalPoints = Number(sessionStorage.getItem('score'));
-    console.log("Total - points: "this.totalPoints);
+    console.log("Total - points: "+this.totalPoints);
   }
 
 }

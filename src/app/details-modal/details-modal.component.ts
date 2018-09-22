@@ -7,7 +7,8 @@ export interface DialogData {
   hair_color: string,
   homeworld: string,
   films: string[],
-  vehicles: string[]
+  vehicles: string[],
+  image: string
 }
 
 @Component({

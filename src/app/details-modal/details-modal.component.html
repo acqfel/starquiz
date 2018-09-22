@@ -1,3 +1,30 @@
-<p>
-  details-modal works!
-</p>
+<mat-dialog-actions>
+  <h2>Details</h2>
+  <span class="flex-spacer"></span>
+  <button mat-button mat-icon-button mat-dialog-close><mat-icon>close</mat-icon></button>
+</mat-dialog-actions>
+
+<mat-dialog-content>
+  <div fxLayout="row">
+    <div fxFlex="50">
+      <img class="max-height" width=200 src={{data.image}} *ngIf="data.image">
+    </div>
+    <div fxFlex="50">
+      <p>Specie: {{data.species}}</p>
+      <p>Height: {{data.height}}</p>
+      <p>Hair: {{data.hair_color}}</p>
+      <p>Planet: {{data.homeworld}}</p>
+    </div>
+  </div>
+  <div fxLayout="row">
+    <div fxFlex>
+      <p>Movies: </p>
+    </div>
+  </div>
+  <div fxLayout="row">
+    <div fxFlex>
+      <p>Vehicles: </p>
+    </div>
+  </div>
+</mat-dialog-content>
+

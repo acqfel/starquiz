@@ -21,4 +21,8 @@ export class ScoreService {
   getScore() {
     return Number(sessionStorage.getItem('score'));
   }
+  
+  resetScore() {
+    sessionStorage.setItem('score', '0');
+  }
 }

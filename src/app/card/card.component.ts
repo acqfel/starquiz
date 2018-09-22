@@ -34,6 +34,7 @@ export class CardComponent implements OnInit {
     let homeworld = item.homeworld;
     let films = item.films;
     let vehicles = item.vehicles;
+    let image = this.photo;
     this.dialog.open(DetailsModalComponent, 
                     {width: '550px', 
                     height: '450px', 
@@ -42,7 +43,8 @@ export class CardComponent implements OnInit {
                            hair_color: hair_color,
                            homeworld: homeworld,
                            films: films,
-                           vehicles: vehicles
+                           vehicles: vehicles,
+                           image: image
                       }
                     });
   }
@@ -60,7 +62,7 @@ export class CardComponent implements OnInit {
   
   getHeroImage = () => {
     this.HeroImageService.heroImage(this.item.name).subscribe( (response) => {
-      this.photo = response.data[0].images.fixed_height_still.url;
+      this.photo = response.data[0].images.downsized_still.url;
     }, (error) => {
       alert("Error: " + error.statusText);
     })
