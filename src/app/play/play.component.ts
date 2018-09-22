@@ -21,7 +21,7 @@ export class PlayComponent implements OnInit {
   ngOnInit() {
     this.getAllPeople(1);
     this.ScoreService.resetScore();
-    setTimeout(() => { this.router.navigate(['/points']); }, 10000);
+    setTimeout(() => { this.router.navigate(['/points']); }, 120000);
   }
 
   getAllPeople = (page: number) => {

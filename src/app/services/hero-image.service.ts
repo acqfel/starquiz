@@ -2,13 +2,15 @@ import { Injectable } from '@angular/core';
 import { HeroImage } from '../interfaces/hero-image';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HeroImageService {
 
-  baseUrl: string = 'https://api.giphy.com/v1/gifs/search?api_key=Wq7jKPN0fRCHf3ea0gtqfa61tg6mxMw2&limit=1&offset=0&rating=G&lang=en&fmt=json&q=';
+  apiKey: string = environment.apiKey;
+  baseUrl: string = 'https://api.giphy.com/v1/gifs/search?api_key='+this.apiKey+'&limit=1&offset=0&rating=G&lang=en&fmt=json&q=';
   search: Observable<HeroImage>;
   cachedValue: string;
 
