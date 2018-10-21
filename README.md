@@ -1,5 +1,12 @@
 # Starquiz
 
+In this game the user must hit the name of the Star Wars character in the picture. The user will have 2 minutes to try to hit as much as he can.
+
+### API used
+[SWAPI](https://swapi.co/) .
+
+[Giphy](https://giphy.com/) - temporarily .
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.1.
 
 ## Development server
